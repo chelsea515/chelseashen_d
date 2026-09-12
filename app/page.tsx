@@ -301,8 +301,8 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">PROFILE</p>
           <h1 id="hero-title">
-            数字化转型与<br />
-            <em>数据产品</em>咨询顾问
+            Chelsea Shen<br />
+            <em>沈 川</em>
           </h1>
           <p className="hero-intro">数字化转型与产品落地交付</p>
           <a className="text-link" href="#experience">

@@ -6,8 +6,8 @@ test("career page contains the required positioning and accessible disclosure co
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
 
-  assert.match(page, /数字化转型与/);
-  assert.match(page, /数据产品<\/em>咨询顾问/);
+  assert.match(page, /Chelsea Shen/);
+  assert.match(page, /沈 川/);
   assert.match(page, /<p className="eyebrow">PROFILE<\/p>/);
   assert.match(page, /数字化转型与产品落地交付/);
   assert.match(page, /6\+<\/strong><span>年工作经验/);
