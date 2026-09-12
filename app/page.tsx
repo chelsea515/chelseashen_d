@@ -295,7 +295,7 @@ export default function Home() {
           <p className="hero-subcopy">
             连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化
           </p>
-          <p className="hero-belief">工作理念：能担当，有热爱，沉下心把专业做透</p>
+          <p className="hero-belief">工作理念：沉下心，有担当，有热爱</p>
           <div className="fact-grid" aria-label="职业与教育概览">
             <div><strong>6+</strong><span>年工作经验</span></div>
             <div><strong>墨尔本大学</strong><span>市场营销与分析（本/硕）</span></div>
@@ -314,7 +314,8 @@ export default function Home() {
 
       <section className="section profile" id="profile" aria-labelledby="profile-title">
         <div>
-          <h2 id="profile-title">产品规划 &gt; 产品落地 &gt; 业务赋能</h2>
+          <h2 id="profile-title">端到端的产品解决方案交付</h2>
+          <p className="profile-subtitle">产品规划，产品落地，业务赋能</p>
         </div>
         <div className="capability-list">
           <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
@@ -356,19 +357,26 @@ export default function Home() {
                         </div>
                         <div className="project-list">
                           {group.projects.map((project) => {
-                            const projectIsOpen = Boolean(openProjects[project.id]);
+                            const alwaysOpenProjects = employer.id === "pwc";
+                            const projectIsOpen = alwaysOpenProjects || Boolean(openProjects[project.id]);
                             return (
                               <article className={`project ${projectIsOpen ? "is-open" : ""}`} key={project.id}>
-                                <button
-                                  className="project-trigger"
-                                  type="button"
-                                  onClick={() => toggleProject(project.id)}
-                                  aria-expanded={projectIsOpen}
-                                  aria-controls={`project-panel-${project.id}`}
-                                >
-                                  <span>{project.title}</span>
-                                  <span aria-hidden="true">{projectIsOpen ? "收起" : "展开"}</span>
-                                </button>
+                                {alwaysOpenProjects ? (
+                                  <div className="project-trigger static-project-trigger">
+                                    <span>{project.title}</span>
+                                  </div>
+                                ) : (
+                                  <button
+                                    className="project-trigger"
+                                    type="button"
+                                    onClick={() => toggleProject(project.id)}
+                                    aria-expanded={projectIsOpen}
+                                    aria-controls={`project-panel-${project.id}`}
+                                  >
+                                    <span>{project.title}</span>
+                                    {!alwaysOpenProjects && <span aria-hidden="true">{projectIsOpen ? "收起" : "展开"}</span>}
+                                  </button>
+                                )}
                                 {projectIsOpen && <ProjectDetail project={project} />}
                               </article>
                             );

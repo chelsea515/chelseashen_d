@@ -15,7 +15,8 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /<a href="#experience">经历<\/a>/);
   assert.match(page, /数字化转型与产品落地交付/);
   assert.match(page, /连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化/);
-  assert.match(page, /工作理念：能担当，有热爱，沉下心把专业做透/);
+  assert.match(page, /工作理念：沉下心，有担当，有热爱/);
+  assert.doesNotMatch(page, /工作理念：能担当，有热爱，沉下心把专业做透/);
   assert.doesNotMatch(page, /浏览工作经历/);
   assert.doesNotMatch(page, /负责、热爱/);
   assert.doesNotMatch(page, /聚焦奢侈品、美妆、汽车及酒店行业的数据与客户运营场景/);
@@ -25,8 +26,10 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /个硕博学位/);
   assert.match(page, /<div className="hero-copy">[\s\S]*<div className="fact-grid" aria-label="职业与教育概览">/);
   assert.doesNotMatch(page, /<aside className="hero-facts"/);
-  assert.match(page, /产品规划 &gt; 产品落地 &gt; 业务赋能/);
-  assert.doesNotMatch(page, /端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）/);
+  assert.match(page, /<h2 id="profile-title">端到端的产品解决方案交付<\/h2>/);
+  assert.match(page, /<p className="profile-subtitle">产品规划，产品落地，业务赋能<\/p>/);
+  assert.doesNotMatch(page, /产品规划 &gt; 产品落地 &gt; 业务赋能/);
+  assert.doesNotMatch(page, /端到端的产品解决方案交付（/);
   assert.doesNotMatch(page, /亮点：交付端到端的产品解决方案/);
   assert.doesNotMatch(page, /经历亮点：端到端的产品解决方案/);
   assert.doesNotMatch(page, /01 \/ Profile/);
@@ -71,6 +74,11 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /130 8281 3052/);
   assert.match(page, /tel:\+8613082813052/);
   assert.match(page, /Shang Hai/);
+  assert.match(page, /const alwaysOpenProjects = employer\.id === "pwc"/);
+  assert.match(page, /const projectIsOpen = alwaysOpenProjects \|\| Boolean\(openProjects\[project\.id\]\)/);
+  assert.match(page, /alwaysOpenProjects \? \(/);
+  assert.match(page, /<div className="project-trigger static-project-trigger">/);
+  assert.match(page, /!alwaysOpenProjects && <span aria-hidden="true">\{projectIsOpen \? "收起" : "展开"\}<\/span>/);
   assert.match(layout, /lang="zh-CN"/);
   assert.match(layout, /沈川 Chelsea \| 数字化转型与数据产品咨询顾问/);
   assert.match(layout, /og\.png/);
@@ -92,8 +100,11 @@ test("starter preview surface is not shipped", async () => {
   assert.match(css, /\.portrait-frame \{[^}]*transform: translateX\(clamp\(20px, 4vw, 64px\)\)/);
   assert.match(css, /\.portrait \{[^}]*box-shadow: none/);
   assert.match(css, /\.hero-belief \{[^}]*color: var\(--blue\)/);
-  assert.match(css, /\.profile h2 \{[^}]*color: var\(--blue\)/);
-  assert.match(css, /\.profile h2 \{[^}]*font-size: clamp\(18px, 2vw, 28px\)/);
+  assert.match(css, /\.profile h2 \{[^}]*color: var\(--ink\)/);
+  assert.match(css, /\.profile h2 \{[^}]*font-size: clamp\(30px, 3vw, 44px\)/);
+  assert.match(css, /\.profile-subtitle \{[^}]*color: var\(--blue\)/);
+  assert.match(css, /\.profile-subtitle \{[^}]*font-size: clamp\(16px, 1\.7vw, 22px\)/);
+  assert.match(css, /\.static-project-trigger \{[^}]*cursor: default/);
   assert.match(css, /\.fact-grid span \{[^}]*font-size: 13px/);
   assert.match(css, /\.profile h2 \{[^}]*white-space: nowrap/);
   assert.match(css, /--charcoal: #101820/);
