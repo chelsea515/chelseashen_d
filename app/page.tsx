@@ -51,7 +51,7 @@ const translations: Record<string, string> = {
   "2C 线上平台｜用户画像及市场调研": "D2C Online Platform | Customer Profiling and Market Research",
   "渠道经营分析与 BI 看板（0→1）": "Channel Performance Analytics & BI Dashboard (0→1)",
   "用户画像分析与市场策略优化": "Customer Profiling and Market Strategy Optimization",
-  "数据分析赋能用户运营": "Data Analytics for User Operations",
+  "数据分析赋能用户运营": "Data Analytics for Consumer Operations",
   "经营分析与增长运营": "Business Analytics and Growth Operations",
   "用户洞察带动增长": "User Insights Driving Growth",
   "项目经理兼 BA Lead": "PM / BA Lead",
@@ -64,7 +64,7 @@ const translations: Record<string, string> = {
   "工作理念：沉下心，有担当，有热爱": "Working philosophy: Stay grounded, take ownership and bring passion",
   "年工作经验": "years of experience",
   "市场营销与分析（本/硕）": "Marketing & Analytics (B/M)",
-  "端到端的产品解决方案交付": "End-to-End",
+  "端到端的产品解决方案交付": "End-to-End Product Solution Delivery",
   "产品规划，产品落地，业务赋能": "Roadmap Planning, product delivery, business enablement",
   "数字化 / AI 转型规划": "Digital / AI Transformation Planning",
   "数字化产品落地": "Digital Product Delivery",
@@ -392,7 +392,6 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="wordmark contact-details" aria-label="联系方式">
-          <span>{lang === "en" ? "Contact:" : "联系方式："}</span>
           <a href="mailto:chuanshen5@163.com">chuanshen5@163.com</a>
           <span> / </span>
           <a href="tel:+8613082813052">130 8281 3052</a>
@@ -441,7 +440,6 @@ export default function Home() {
 
       <section className="section experience" id="experience" aria-labelledby="experience-title">
         <div className="section-heading">
-          <div className="section-label">02 / Experience</div>
           <h2 id="experience-title">{t("工作经历")}</h2>
           <p>{t("点击公司或项目，查看具体职责、项目阶段及业务成果。")}</p>
         </div>

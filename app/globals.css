@@ -85,8 +85,8 @@ nav a:hover { color: var(--blue); }
 .capability-list h3 { margin: 18px 0 9px; color: #fff; font-size: 17px; letter-spacing: -.02em; }
 .capability-list p { margin: 0; color: rgba(255, 255, 255, .76); font-size: 13px; }
 
-.section-heading { display: grid; grid-template-columns: 180px 1fr; column-gap: clamp(30px, 7vw, 130px); align-items: end; }
-.section-heading p { grid-column: 2; margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+.section-heading { display: block; }
+.section-heading p { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
 .experience-list { margin-top: 50px; border-top: 1px solid var(--line); }
 .employer { border-bottom: 1px solid var(--line); }
 .employer-trigger, .project-trigger { width: 100%; border: 0; color: inherit; background: transparent; text-align: left; }
