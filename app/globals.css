@@ -36,6 +36,9 @@ main { overflow: hidden; }
 }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-weight: 650; text-decoration: none; letter-spacing: .01em; }
 .wordmark-dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: #fff; font-size: 12px; font-family: Georgia, serif; }
+.contact-details { gap: 0; font-size: 12px; font-weight: 500; letter-spacing: 0; white-space: nowrap; }
+.contact-details a { text-decoration: none; }
+.contact-details a:hover { color: var(--blue); }
 nav { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
 nav a { text-decoration: none; }
 nav a:hover { color: var(--blue); }
@@ -146,6 +149,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #8eb2e4; outline-offs
 }
 @media (max-width: 620px) {
   .site-header, .hero, .section, footer { width: calc(100% - 32px); }
+  .contact-details { font-size: 10px; }
   .availability { font-size: 11px; }
   .hero { grid-template-columns: 1fr; padding: 58px 0 48px; }
   .hero h1 { font-size: 45px; }

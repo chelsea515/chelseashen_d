@@ -282,10 +282,12 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="返回页面顶部">
-          <span className="wordmark-dot">C</span>
-          <span>沈川 Chelsea</span>
-        </a>
+        <div className="wordmark contact-details" aria-label="联系方式">
+          <span>联系方式：</span>
+          <a href="mailto:chuanshen5@163.com">chuanshen5@163.com</a>
+          <span> / </span>
+          <a href="tel:+8613082813052">130 8281 3052</a>
+        </div>
         <nav aria-label="页面导航">
           <a href="#profile">简介</a>
           <a href="#experience">经历</a>

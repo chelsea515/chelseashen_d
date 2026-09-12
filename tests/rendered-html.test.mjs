@@ -19,7 +19,10 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /广告 ROI 提升 7%\+/);
   assert.match(page, /chelsea-portrait-v2\.jpg/);
   assert.doesNotMatch(page, /id="education"/);
-  assert.doesNotMatch(page, /130 8281 3052/);
+  assert.match(page, /联系方式：/);
+  assert.match(page, /chuanshen5@163\.com/);
+  assert.match(page, /130 8281 3052/);
+  assert.match(page, /tel:\+8613082813052/);
   assert.match(layout, /lang="zh-CN"/);
   assert.match(layout, /沈川 Chelsea \| 数字化转型与数据产品咨询顾问/);
   assert.match(layout, /og\.png/);
