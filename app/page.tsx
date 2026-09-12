@@ -262,10 +262,8 @@ function ProjectDetail({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const [openEmployerId, setOpenEmployerId] = useState("deloitte");
-  const [openProjects, setOpenProjects] = useState<Record<string, boolean>>({
-    "luxury-dashboard": true,
-  });
+  const [openEmployerId, setOpenEmployerId] = useState("");
+  const [openProjects, setOpenProjects] = useState<Record<string, boolean>>({});
 
   const toggleEmployer = (employerId: string) => {
     setOpenEmployerId((current) => (current === employerId ? "" : employerId));
@@ -301,6 +299,10 @@ export default function Home() {
           <p className="hero-subcopy">
             连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化
           </p>
+          <div className="fact-grid" aria-label="职业与教育概览">
+            <div><strong>6+</strong><span>年工作经验</span></div>
+            <div><strong>墨尔本大学</strong><span>市场营销与分析（本/硕）</span></div>
+          </div>
         </div>
 
         <div className="portrait-frame">
@@ -311,17 +313,11 @@ export default function Home() {
           />
         </div>
 
-        <aside className="hero-facts" aria-label="职业概览">
-          <div className="fact-grid">
-            <div><strong>6+</strong><span>年工作经验</span></div>
-            <div><strong>墨尔本大学</strong><span>市场营销与分析（本/硕）</span></div>
-          </div>
-        </aside>
       </section>
 
       <section className="section profile" id="profile" aria-labelledby="profile-title">
         <div>
-          <h2 id="profile-title">经历亮点：端到端的产品解决方案 - 产品规划 &gt; 产品落地 &gt; 业务赋能</h2>
+          <h2 id="profile-title">亮点：交付端到端的产品解决方案（产品规划 &gt; 产品落地 &gt; 业务赋能）</h2>
         </div>
         <div className="capability-list">
           <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
