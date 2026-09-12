@@ -34,4 +34,6 @@ test("starter preview surface is not shipped", async () => {
   assert.doesNotMatch(layout, /codex-preview|Starter Project/);
   assert.match(css, /prefers-reduced-motion/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
+  assert.match(packageJson, /"test": "WRANGLER_LOG_PATH=\.wrangler\/wrangler\.log vinext build && node --test tests\/rendered-html\.test\.mjs"/);
+  assert.doesNotMatch(packageJson, /"test": "npm run build/);
 });
