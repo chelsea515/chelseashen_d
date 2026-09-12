@@ -42,8 +42,10 @@ main { overflow: hidden; }
 nav { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
 nav a { text-decoration: none; }
 nav a:hover { color: var(--blue); }
-.availability { justify-self: end; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: #3a4854; text-decoration: none; letter-spacing: .08em; }
-.availability span { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+.language-switcher { justify-self: end; display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.language-switcher button { border: 0; padding: 2px 0; background: transparent; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.language-switcher button.active { color: var(--blue); font-weight: 750; }
+.language-switcher button:hover { color: var(--blue); }
 
 .hero {
   width: min(1400px, calc(100% - 64px));
@@ -143,7 +145,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #8eb2e4; outline-offs
 @media (max-width: 620px) {
   .site-header, .hero, .section, footer { width: calc(100% - 32px); }
   .contact-details { font-size: 10px; }
-  .availability { font-size: 11px; }
+  .language-switcher, .language-switcher button { font-size: 11px; }
   .hero { grid-template-columns: 1fr; padding: 58px 0 48px; }
   .hero h1 { font-size: 45px; }
   .profile h2 { font-size: 18px; letter-spacing: -.025em; }
