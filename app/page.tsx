@@ -289,7 +289,6 @@ export default function Home() {
         <nav aria-label="页面导航">
           <a href="#profile">简介</a>
           <a href="#experience">经历</a>
-          <a href="#education">教育</a>
         </nav>
         <a className="availability" href="mailto:chuanshen5@163.com">
           <span aria-hidden="true" /> 可联系
@@ -312,7 +311,7 @@ export default function Home() {
         <div className="portrait-frame">
           <div className="portrait-note">PROFILE</div>
           <img
-            src="/chelsea-portrait.png"
+            src="/chelsea-portrait-v2.jpg"
             alt="沈川 Chelsea 的职业头像"
             className="portrait"
           />
@@ -407,17 +406,6 @@ export default function Home() {
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section className="section education" id="education" aria-labelledby="education-title">
-        <div className="section-label">03 / Education & Belief</div>
-        <div className="education-content">
-          <div>
-            <h2 id="education-title">墨尔本大学</h2>
-            <p>本科、硕士｜市场营销与分析</p>
-          </div>
-          <blockquote>“对结果负责，主动向前；以好奇持续探索，以专业深耕价值。”</blockquote>
         </div>
       </section>
 
