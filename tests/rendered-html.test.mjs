@@ -28,6 +28,12 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /<aside className="hero-facts"/);
   assert.match(page, /<h2 id="profile-title">端到端的产品解决方案交付<\/h2>/);
   assert.match(page, /<p className="profile-subtitle">产品规划，产品落地，业务赋能<\/p>/);
+  assert.match(page, /识别业务机会，定义 Use Case，制定优先级与路线图<\/p>/);
+  assert.match(page, /以 PM \/ BA 身份连接业务、数据与技术，推进端到端交付<\/p>/);
+  assert.match(page, /将用户、营销与经营数据转化为可执行的增长和运营策略<\/p>/);
+  assert.doesNotMatch(page, /识别业务机会，定义 Use Case，制定优先级与路线图。/);
+  assert.doesNotMatch(page, /以 PM \/ BA 身份连接业务、数据与技术，推进端到端交付。/);
+  assert.doesNotMatch(page, /将用户、营销与经营数据转化为可执行的增长和运营策略。/);
   assert.doesNotMatch(page, /产品规划 &gt; 产品落地 &gt; 业务赋能/);
   assert.doesNotMatch(page, /端到端的产品解决方案交付（/);
   assert.doesNotMatch(page, /亮点：交付端到端的产品解决方案/);
@@ -74,7 +80,7 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /130 8281 3052/);
   assert.match(page, /tel:\+8613082813052/);
   assert.match(page, /Shang Hai/);
-  assert.match(page, /const alwaysOpenProjects = employer\.id === "pwc"/);
+  assert.match(page, /const alwaysOpenProjects = employer\.id === "pwc" \|\| employer\.id === "saic-gmac"/);
   assert.match(page, /const projectIsOpen = alwaysOpenProjects \|\| Boolean\(openProjects\[project\.id\]\)/);
   assert.match(page, /alwaysOpenProjects \? \(/);
   assert.match(page, /<div className="project-trigger static-project-trigger">/);
@@ -100,6 +106,7 @@ test("starter preview surface is not shipped", async () => {
   assert.match(css, /\.portrait-frame \{[^}]*transform: translateX\(clamp\(20px, 4vw, 64px\)\)/);
   assert.match(css, /\.portrait \{[^}]*box-shadow: none/);
   assert.match(css, /\.hero-belief \{[^}]*color: var\(--blue\)/);
+  assert.match(css, /\.hero-subcopy \{[^}]*max-width: none/);
   assert.match(css, /\.profile h2 \{[^}]*color: var\(--ink\)/);
   assert.match(css, /\.profile h2 \{[^}]*font-size: clamp\(30px, 3vw, 44px\)/);
   assert.match(css, /\.profile-subtitle \{[^}]*color: var\(--blue\)/);

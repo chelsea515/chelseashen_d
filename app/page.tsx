@@ -318,9 +318,9 @@ export default function Home() {
           <p className="profile-subtitle">产品规划，产品落地，业务赋能</p>
         </div>
         <div className="capability-list">
-          <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
-          <article><span>02</span><h3>数字化产品落地</h3><p>以 PM / BA 身份连接业务、数据与技术，推进端到端交付。</p></article>
-          <article><span>03</span><h3>数据洞察驱动运营</h3><p>将用户、营销与经营数据转化为可执行的增长和运营策略。</p></article>
+          <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图</p></article>
+          <article><span>02</span><h3>数字化产品落地</h3><p>以 PM / BA 身份连接业务、数据与技术，推进端到端交付</p></article>
+          <article><span>03</span><h3>数据洞察驱动运营</h3><p>将用户、营销与经营数据转化为可执行的增长和运营策略</p></article>
         </div>
       </section>
 
@@ -357,7 +357,7 @@ export default function Home() {
                         </div>
                         <div className="project-list">
                           {group.projects.map((project) => {
-                            const alwaysOpenProjects = employer.id === "pwc";
+                            const alwaysOpenProjects = employer.id === "pwc" || employer.id === "saic-gmac";
                             const projectIsOpen = alwaysOpenProjects || Boolean(openProjects[project.id]);
                             return (
                               <article className={`project ${projectIsOpen ? "is-open" : ""}`} key={project.id}>

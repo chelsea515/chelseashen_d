@@ -58,7 +58,7 @@ nav a:hover { color: var(--blue); }
 .eyebrow, .section-label { margin: 0; color: var(--blue); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; }
 .hero h1 { margin: 24px 0 22px; max-width: 620px; font-size: clamp(44px, 5vw, 80px); line-height: 1.12; letter-spacing: -.065em; font-weight: 720; }
 .hero-intro { max-width: 430px; margin: 0; font-size: 16px; color: #44505c; }
-.hero-subcopy { max-width: 600px; margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.hero-subcopy { max-width: none; margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
 .hero-belief { margin: 11px 0 0; color: var(--blue); font-size: 13px; font-weight: 650; letter-spacing: .02em; }
 
 .portrait-frame { position: relative; align-self: center; justify-self: end; padding: 0; text-align: center; transform: translateX(clamp(20px, 4vw, 64px)); }
