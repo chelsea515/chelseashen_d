@@ -32,6 +32,7 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /具备从需求洞察、Use Case 规划、数据分析与产品设计/);
   assert.doesNotMatch(page, /从业务机会识别、路线图制定，到数据产品设计、开发协同及上线运营的端到端交付/);
   assert.doesNotMatch(page, /从用户分层、行为路径与外部数据机会中提炼策略，推动营销、CRM 与商品运营决策/);
+  assert.doesNotMatch(page, /<p className="employer-overview">/);
   assert.match(page, /aria-expanded/);
   assert.match(page, /aria-controls/);
   assert.match(page, /useState\(""\)/);
@@ -76,8 +77,11 @@ test("starter preview surface is not shipped", async () => {
   assert.match(css, /\.capability-list article \{[^}]*background: var\(--charcoal\)/);
   assert.match(css, /\.capability-list article \{[^}]*justify-content: center/);
   assert.match(css, /\.capability-list h3[^}]*color: #fff/);
-  assert.match(css, /\.group-heading \{[^}]*background: var\(--blue\)/);
+  assert.match(css, /\.group-heading \{[^}]*background: var\(--charcoal\)/);
   assert.match(css, /\.group-heading h3[^}]*color: #fff/);
+  assert.match(css, /\.group-heading h3[^}]*font-size: 13px/);
+  assert.match(css, /\.project-trigger \{[^}]*padding: 16px 20px/);
+  assert.match(css, /\.project-trigger \{[^}]*font-size: 13px/);
   assert.doesNotMatch(css, /\.project-list \{[^}]*border-left/);
   assert.doesNotMatch(css, /\.project-list \{[^}]*border-right/);
   assert.match(css, /prefers-reduced-motion/);

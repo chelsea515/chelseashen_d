@@ -348,7 +348,6 @@ export default function Home() {
                 </button>
                 {isOpen && (
                   <div className="employer-panel" id={`employer-panel-${employer.id}`}>
-                    <p className="employer-overview">{employer.overview}</p>
                     {employer.groups.map((group) => (
                       <section className="project-group" key={group.title}>
                         <div className="group-heading">
