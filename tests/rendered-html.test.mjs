@@ -8,6 +8,8 @@ test("career page contains the required positioning and accessible disclosure co
 
   assert.match(page, /数字化转型与/);
   assert.match(page, /数据产品<\/em>咨询顾问/);
+  assert.match(page, /<p className="eyebrow">PROFILE<\/p>/);
+  assert.match(page, /数字化转型与产品落地交付/);
   assert.match(page, /6\+<\/strong><span>年工作经验/);
   assert.match(page, /aria-expanded/);
   assert.match(page, /aria-controls/);

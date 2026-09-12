@@ -298,14 +298,12 @@ export default function Home() {
 
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">Interactive Career Profile / Shanghai</p>
+          <p className="eyebrow">PROFILE</p>
           <h1 id="hero-title">
             数字化转型与<br />
             <em>数据产品</em>咨询顾问
           </h1>
-          <p className="hero-intro">
-            连接业务、数据与技术，推动数字化转型规划、数据产品交付与用户运营优化落地。
-          </p>
+          <p className="hero-intro">数字化转型与产品落地交付</p>
           <a className="text-link" href="#experience">
             浏览工作经历 <span aria-hidden="true">↓</span>
           </a>
