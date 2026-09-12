@@ -59,8 +59,6 @@ nav a:hover { color: var(--blue); }
 .hero h1 { margin: 24px 0 22px; max-width: 620px; font-size: clamp(44px, 5vw, 80px); line-height: 1.12; letter-spacing: -.065em; font-weight: 720; }
 .hero h1 em { color: #93a0ac; font-style: normal; }
 .hero-intro { max-width: 430px; margin: 0; font-size: 16px; color: #44505c; }
-.text-link { display: inline-flex; gap: 16px; margin-top: 32px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); text-decoration: none; font-size: 14px; font-weight: 650; }
-.text-link:hover { color: var(--blue); border-color: var(--blue); }
 
 .portrait-frame { position: relative; align-self: end; padding: 48px 0 36px; text-align: center; }
 .portrait-frame::before { content: ""; position: absolute; inset: 38px -42px 24px; z-index: -1; border-radius: 150px 150px 20px 20px; background: #e4eaf0; }
@@ -69,12 +67,10 @@ nav a:hover { color: var(--blue); }
 .portrait-frame p { margin: 13px -30px 0; color: var(--muted); font-size: 12px; }
 
 .hero-facts { padding-left: 34px; border-left: 1px solid var(--line); }
-.hero-facts h2 { margin: 20px 0 16px; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; line-height: 1.25; }
-.hero-facts > p:not(.eyebrow) { margin: 0; color: var(--muted); font-size: 14px; }
-.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 30px; }
+.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 0; }
 .fact-grid div { padding-top: 15px; border-top: 1px solid var(--line); }
 .fact-grid strong, .fact-grid span { display: block; }
-.fact-grid strong { font-size: 28px; line-height: 1; letter-spacing: -.05em; }
+.fact-grid strong { font-size: 24px; line-height: 1.1; letter-spacing: 0; }
 .fact-grid span { margin-top: 6px; font-size: 11px; color: var(--muted); }
 
 .section { width: min(1400px, calc(100% - 64px)); margin: 0 auto; padding: 112px 0; border-bottom: 1px solid var(--line); }

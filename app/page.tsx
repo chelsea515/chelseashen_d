@@ -305,9 +305,6 @@ export default function Home() {
             <em>沈 川</em>
           </h1>
           <p className="hero-intro">数字化转型与产品落地交付</p>
-          <a className="text-link" href="#experience">
-            浏览工作经历 <span aria-hidden="true">↓</span>
-          </a>
         </div>
 
         <div className="portrait-frame">
@@ -321,14 +318,9 @@ export default function Home() {
         </div>
 
         <aside className="hero-facts" aria-label="职业概览">
-          <p className="eyebrow">ABOUT</p>
-          <h2>负责、热爱，<br />持续深耕。</h2>
-          <p>
-            聚焦奢侈品、美妆、汽车及酒店行业的数据与客户运营场景，既能定义问题，也能把方案交付到业务现场。
-          </p>
           <div className="fact-grid">
             <div><strong>6+</strong><span>年工作经验</span></div>
-            <div><strong>2</strong><span>个硕博学位</span></div>
+            <div><strong>墨尔本大学</strong><span>本科、硕士｜市场营销与分析</span></div>
           </div>
         </aside>
       </section>
