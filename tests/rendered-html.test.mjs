@@ -15,6 +15,7 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /<a href="#experience">经历<\/a>/);
   assert.match(page, /数字化转型与产品落地交付/);
   assert.match(page, /连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化/);
+  assert.match(page, /工作理念：能担当，有热爱，沉下心把专业做透/);
   assert.doesNotMatch(page, /浏览工作经历/);
   assert.doesNotMatch(page, /负责、热爱/);
   assert.doesNotMatch(page, /聚焦奢侈品、美妆、汽车及酒店行业的数据与客户运营场景/);
@@ -24,7 +25,8 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /个硕博学位/);
   assert.match(page, /<div className="hero-copy">[\s\S]*<div className="fact-grid" aria-label="职业与教育概览">/);
   assert.doesNotMatch(page, /<aside className="hero-facts"/);
-  assert.match(page, /端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）/);
+  assert.match(page, /产品规划 &gt; 产品落地 &gt; 业务赋能/);
+  assert.doesNotMatch(page, /端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）/);
   assert.doesNotMatch(page, /亮点：交付端到端的产品解决方案/);
   assert.doesNotMatch(page, /经历亮点：端到端的产品解决方案/);
   assert.doesNotMatch(page, /01 \/ Profile/);
@@ -46,6 +48,18 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /useState<Record<string, boolean>>\(\{\}\)/);
   assert.match(page, /阶段 1｜三年期产品规划/);
   assert.match(page, /阶段 2｜一期产品实施/);
+  assert.match(page, /基于广告投放业务需求，制定三年期产品规划方案，设计分阶段业务 Use Case 及实施路线图/);
+  assert.match(page, /第一年 – 数据资产及分析框架落地：完成全域营销数据的端到端接入与串联/);
+  assert.match(page, /第二年 – 高阶数据应用场景落地赋能精准投放：1）依托联邦计算合作实现一方\/三方数据协同/);
+  assert.match(page, /第三年 - AI for BI 等智能分析场景/);
+  assert.doesNotMatch(page, /第一年完成从品牌认知、兴趣互动到购买转化的全链路数据接入与可视化/);
+  assert.match(page, /rolePlacement: "after-second-phase"/);
+  assert.match(page, /PM\/BA Lead/);
+  assert.match(page, /全球酒店集团｜CRM 会员运营战略与本地化 Campaign[\s\S]*咨询顾问/);
+  assert.doesNotMatch(page, /全球汽车品牌｜CRM 用户流失诊断及召回策略/);
+  assert.match(page, /头部豪华汽车品牌｜CRM 用户流失诊断及召回策略/);
+  assert.doesNotMatch(page, /商品规划｜基于客户分群的数据建模与买货策略优化/);
+  assert.match(page, /头部服装品牌｜基于客户分群的数据建模与买货策略优化/);
   assert.match(page, /10\+ 数据平台接入/);
   assert.match(page, /广告 ROI 提升 7%\+/);
   assert.match(page, /chelsea-portrait-v2\.jpg/);
@@ -56,6 +70,7 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /chuanshen5@163\.com/);
   assert.match(page, /130 8281 3052/);
   assert.match(page, /tel:\+8613082813052/);
+  assert.match(page, /Shang Hai/);
   assert.match(layout, /lang="zh-CN"/);
   assert.match(layout, /沈川 Chelsea \| 数字化转型与数据产品咨询顾问/);
   assert.match(layout, /og\.png/);
@@ -73,6 +88,12 @@ test("starter preview surface is not shipped", async () => {
   assert.doesNotMatch(layout, /codex-preview|Starter Project/);
   assert.doesNotMatch(css, /\.site-header \{[^}]*border-bottom/);
   assert.doesNotMatch(css, /portrait-frame::before/);
+  assert.match(css, /\.portrait-frame \{[^}]*justify-self: end/);
+  assert.match(css, /\.portrait-frame \{[^}]*transform: translateX\(clamp\(20px, 4vw, 64px\)\)/);
+  assert.match(css, /\.portrait \{[^}]*box-shadow: none/);
+  assert.match(css, /\.hero-belief \{[^}]*color: var\(--blue\)/);
+  assert.match(css, /\.profile h2 \{[^}]*color: var\(--blue\)/);
+  assert.match(css, /\.profile h2 \{[^}]*font-size: clamp\(18px, 2vw, 28px\)/);
   assert.match(css, /\.fact-grid span \{[^}]*font-size: 13px/);
   assert.match(css, /\.profile h2 \{[^}]*white-space: nowrap/);
   assert.match(css, /--charcoal: #101820/);

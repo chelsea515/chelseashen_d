@@ -11,6 +11,7 @@ type Project = {
   id: string;
   title: string;
   role: string;
+  rolePlacement?: "after-second-phase";
   summary?: string;
   phases?: Phase[];
   bullets?: string[];
@@ -48,6 +49,7 @@ const employers: Employer[] = [
             id: "luxury-dashboard",
             title: "全球奢侈时尚品牌｜数字化与 AI 转型规划及经营分析 Dashboard",
             role: "项目经理兼 BA Lead",
+            rolePlacement: "after-second-phase",
             phases: [
               {
                 title: "阶段 1｜数字化 / AI 战略规划与 Use Case 路线图",
@@ -70,13 +72,12 @@ const employers: Employer[] = [
           {
             id: "dmp",
             title: "头部汽车品牌｜营销数据平台（DMP）三年规划与端到端建设",
-            role: "项目经理兼 BA Lead",
+            role: "PM/BA Lead",
             phases: [
               {
                 title: "阶段 1｜三年期产品规划",
                 bullets: [
-                  "基于广告投放、归因与经营分析需求制定三年规划，明确数据资产沉淀、精准投放、营销效能归因与 AI for BI 的能力演进路径",
-                  "第一年完成从品牌认知、兴趣互动到购买转化的全链路数据接入与可视化；第二年规划联邦计算下的一方 / 三方数据协同及 MMM 营销效能归因；第三年规划 AI for BI 智能分析场景",
+                  "基于广告投放业务需求，制定三年期产品规划方案，设计分阶段业务 Use Case 及实施路线图：\n1）第一年 – 数据资产及分析框架落地：完成全域营销数据的端到端接入与串联，打通用户从品牌认知、兴趣互动到购买转化的全链路可视化看板\n2）第二年 – 高阶数据应用场景落地赋能精准投放：1）依托联邦计算合作实现一方/三方数据协同，实现更精准的人群圈选；2）MMM 营销效能归因分析\n3）第三年 - AI for BI 等智能分析场景",
                   "结合业务价值、数据可得性、技术依赖及实施复杂度明确优先建设能力，并基于数据洞察提出投放优化建议",
                 ],
               },
@@ -111,7 +112,7 @@ const employers: Employer[] = [
           {
             id: "hotel-crm",
             title: "全球酒店集团｜CRM 会员运营战略与本地化 Campaign",
-            role: "项目负责人 / BA Lead",
+            role: "咨询顾问",
             summary:
               "帮助中国区团队实现本地化、个性化的会员沟通与运营机制。",
             bullets: [
@@ -123,7 +124,7 @@ const employers: Employer[] = [
           },
           {
             id: "auto-crm",
-            title: "全球汽车品牌｜CRM 用户流失诊断及召回策略",
+            title: "头部豪华汽车品牌｜CRM 用户流失诊断及召回策略",
             role: "BA Lead",
             summary:
               "整合多端客户数据，识别高价值非活跃用户，并形成可执行的激活策略。",
@@ -135,7 +136,7 @@ const employers: Employer[] = [
           },
           {
             id: "merch",
-            title: "商品规划｜基于客户分群的数据建模与买货策略优化",
+            title: "头部服装品牌｜基于客户分群的数据建模与买货策略优化",
             role: "BA Lead",
             summary:
               "以外部数据、门店聚类和销售预测支持更精细的商品规划。",
@@ -227,11 +228,14 @@ const employers: Employer[] = [
 function ProjectDetail({ project }: { project: Project }) {
   return (
     <div className="project-detail" id={`project-panel-${project.id}`}>
-      <div className="project-role">{project.role}</div>
+      {project.rolePlacement !== "after-second-phase" && <div className="project-role">{project.role}</div>}
       {project.summary && <p className="project-summary">{project.summary}</p>}
-      {project.phases?.map((phase) => (
+      {project.phases?.map((phase, phaseIndex) => (
         <section className="phase" key={phase.title}>
           <h5>{phase.title}</h5>
+          {project.rolePlacement === "after-second-phase" && phaseIndex === 1 && (
+            <div className="project-role phase-role">{project.role}</div>
+          )}
           <ul>
             {phase.bullets.map((bullet) => (
               <li key={bullet}>{bullet}</li>
@@ -291,6 +295,7 @@ export default function Home() {
           <p className="hero-subcopy">
             连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化
           </p>
+          <p className="hero-belief">工作理念：能担当，有热爱，沉下心把专业做透</p>
           <div className="fact-grid" aria-label="职业与教育概览">
             <div><strong>6+</strong><span>年工作经验</span></div>
             <div><strong>墨尔本大学</strong><span>市场营销与分析（本/硕）</span></div>
@@ -309,7 +314,7 @@ export default function Home() {
 
       <section className="section profile" id="profile" aria-labelledby="profile-title">
         <div>
-          <h2 id="profile-title">端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）</h2>
+          <h2 id="profile-title">产品规划 &gt; 产品落地 &gt; 业务赋能</h2>
         </div>
         <div className="capability-list">
           <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
@@ -381,7 +386,7 @@ export default function Home() {
 
       <footer>
         <p>沈川 Chelsea · Data & Digital Transformation</p>
-        <a href="mailto:chuanshen5@163.com">chuanshen5@163.com</a>
+        <span>Shang Hai</span>
       </footer>
     </main>
   );
