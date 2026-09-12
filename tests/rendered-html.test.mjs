@@ -10,6 +10,9 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /沈 川/);
   assert.doesNotMatch(page, /<em>沈 川<\/em>/);
   assert.match(page, /<p className="eyebrow">PROFILE<\/p>/);
+  assert.doesNotMatch(page, /<nav aria-label="页面导航">/);
+  assert.doesNotMatch(page, /<a href="#profile">简介<\/a>/);
+  assert.doesNotMatch(page, /<a href="#experience">经历<\/a>/);
   assert.match(page, /数字化转型与产品落地交付/);
   assert.match(page, /连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化/);
   assert.doesNotMatch(page, /浏览工作经历/);
@@ -21,7 +24,8 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /个硕博学位/);
   assert.match(page, /<div className="hero-copy">[\s\S]*<div className="fact-grid" aria-label="职业与教育概览">/);
   assert.doesNotMatch(page, /<aside className="hero-facts"/);
-  assert.match(page, /亮点：交付端到端的产品解决方案（产品规划 &gt; 产品落地 &gt; 业务赋能）/);
+  assert.match(page, /端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）/);
+  assert.doesNotMatch(page, /亮点：交付端到端的产品解决方案/);
   assert.doesNotMatch(page, /经历亮点：端到端的产品解决方案/);
   assert.doesNotMatch(page, /01 \/ Profile/);
   assert.doesNotMatch(page, /把模糊的业务问题，变成可落地的数据与产品方案/);
@@ -64,8 +68,13 @@ test("starter preview surface is not shipped", async () => {
   assert.doesNotMatch(css, /portrait-frame::before/);
   assert.match(css, /\.fact-grid span \{[^}]*font-size: 13px/);
   assert.match(css, /\.profile h2 \{[^}]*white-space: nowrap/);
+  assert.match(css, /--charcoal: #101820/);
+  assert.match(css, /\.capability-list \{[^}]*width: 100vw/);
+  assert.match(css, /\.capability-list \{[^}]*margin-left: calc\(50% - 50vw\)/);
   assert.match(css, /\.capability-list \{[^}]*background: #fff/);
-  assert.match(css, /\.capability-list article \{[^}]*background: var\(--blue\)/);
+  assert.match(css, /\.capability-list article \{[^}]*min-height: 260px/);
+  assert.match(css, /\.capability-list article \{[^}]*background: var\(--charcoal\)/);
+  assert.match(css, /\.capability-list article \{[^}]*justify-content: center/);
   assert.match(css, /\.capability-list h3[^}]*color: #fff/);
   assert.match(css, /\.group-heading \{[^}]*background: var\(--blue\)/);
   assert.match(css, /\.group-heading h3[^}]*color: #fff/);

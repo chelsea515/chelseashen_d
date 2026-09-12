@@ -282,10 +282,6 @@ export default function Home() {
           <span> / </span>
           <a href="tel:+8613082813052">130 8281 3052</a>
         </div>
-        <nav aria-label="页面导航">
-          <a href="#profile">简介</a>
-          <a href="#experience">经历</a>
-        </nav>
         <a className="availability" href="mailto:chuanshen5@163.com">
           <span aria-hidden="true" /> 可联系
         </a>
@@ -317,7 +313,7 @@ export default function Home() {
 
       <section className="section profile" id="profile" aria-labelledby="profile-title">
         <div>
-          <h2 id="profile-title">亮点：交付端到端的产品解决方案（产品规划 &gt; 产品落地 &gt; 业务赋能）</h2>
+          <h2 id="profile-title">端到端的产品解决方案交付（产品规划 &gt; 产品落地 &gt; 业务赋能）</h2>
         </div>
         <div className="capability-list">
           <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
