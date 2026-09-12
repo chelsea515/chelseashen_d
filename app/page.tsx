@@ -41,7 +41,7 @@ const translations: Record<string, string> = {
   "普华永道": "PwC",
   "创新服务部": "Innovation Services",
   "01 / 数字化与 AI 转型规划、Use Case 落地": "01 / Digital & AI Transformation Planning, Use Case Delivery",
-  "02 / 用户数据洞察驱动业务运营优化": "02 / User Data Insights for Business Optimization",
+  "02 / 用户数据洞察驱动业务运营优化": "02 / Consumer Date Insights for Business Optimization",
   "全球奢侈时尚品牌｜数字化与 AI 转型规划及经营分析 Dashboard": "Global Luxury Fashion Brand | Digital & AI Transformation Planning and Business Analytics Dashboard",
   "头部汽车品牌｜营销数据平台（DMP）三年规划与端到端建设": "Leading Automotive Brand | Three-year Marketing Data Platform (DMP) Roadmap and End-to-end Build",
   "头部美妆品牌｜门店 SA 智能导购问答平台": "Leading Beauty Brand | Store SA AI-assisted Advisor Q&A Platform",
@@ -54,18 +54,18 @@ const translations: Record<string, string> = {
   "数据分析赋能用户运营": "Data Analytics for User Operations",
   "经营分析与增长运营": "Business Analytics and Growth Operations",
   "用户洞察带动增长": "User Insights Driving Growth",
-  "项目经理兼 BA Lead": "Project Manager & BA Lead",
+  "项目经理兼 BA Lead": "PM / BA Lead",
   "PM/BA Lead": "PM / BA Lead",
   "BA Lead": "BA Lead",
   "咨询顾问": "Consultant",
   "市场销售部": "Marketing & Sales",
   "数字化转型与产品落地交付": "Digital Transformation & Product Delivery",
-  "连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化": "Connecting business, data and technology to deliver brand transformation and data products, enabling optimization across advertising, membership and retail operations",
+  "连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化": "Connecting business, data and technology to deliver digital/AI transformation and data products, enabling optimization across media, consumer and retail operations",
   "工作理念：沉下心，有担当，有热爱": "Working philosophy: Stay grounded, take ownership and bring passion",
   "年工作经验": "years of experience",
   "市场营销与分析（本/硕）": "Marketing & Analytics (B/M)",
   "端到端的产品解决方案交付": "End-to-end Product Solution Delivery",
-  "产品规划，产品落地，业务赋能": "Product planning, product delivery, business enablement",
+  "产品规划，产品落地，业务赋能": "Roadmap Planning, product delivery, business enablement",
   "数字化 / AI 转型规划": "Digital / AI Transformation Planning",
   "数字化产品落地": "Digital Product Delivery",
   "数据洞察驱动运营": "Data Insights Driving Operations",
@@ -99,6 +99,7 @@ const translations: Record<string, string> = {
   "帮助中国区团队实现本地化、个性化的会员沟通与运营机制。": "Helped the China team establish localized and personalized membership communications and operating mechanisms.",
   "整合多端客户数据，识别高价值非活跃用户，并形成可执行的激活策略。": "Integrated multi-channel customer data to identify high-value inactive customers and shape actionable activation strategies.",
   "以外部数据、门店聚类和销售预测支持更精细的商品规划。": "Used external data, store clustering and sales forecasting to support more precise merchandise planning.",
+  "以 AI 知识问答与个性化推荐，支持门店 SA 围绕消费者需求进行产品讲解与销售沟通。": "Used AI-powered knowledge Q&A and personalized recommendations to help store SAs explain products and engage customers around their needs.",
   "为销售痛点、目标人群、触达时间和渠道选择提供数据支持。": "Provided data support for sales pain points, target audiences, contact timing and channel selection.",
   "构建经营数据基础设施，并以用户分析驱动市场增长。": "Built performance data infrastructure and used customer analytics to drive market growth.",
   "将用户数据转化为可验证的市场宣传策略。": "Translated customer data into testable marketing communication strategies.",
@@ -361,6 +362,18 @@ function ProjectDetail({ project, t }: { project: Project; t: (value: string) =>
   );
 }
 
+function ProjectTitle({ title, t }: { title: string; t: (value: string) => string }) {
+  const translated = t(title);
+  const separator = translated.indexOf("|");
+  if (separator < 0) return <span>{translated}</span>;
+  return (
+    <span className="project-title">
+      <strong className="project-title-brand">{translated.slice(0, separator).trim()}</strong>
+      <span className="project-title-rest"> {translated.slice(separator).trim()}</span>
+    </span>
+  );
+}
+
 export default function Home() {
   const [lang, setLang] = useState<"zh" | "en">("zh");
   const [openEmployerId, setOpenEmployerId] = useState("");
@@ -379,7 +392,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="wordmark contact-details" aria-label="联系方式">
-          <span>联系方式：</span>
+          <span>{lang === "en" ? "Contact:" : "联系方式："}</span>
           <a href="mailto:chuanshen5@163.com">chuanshen5@163.com</a>
           <span> / </span>
           <a href="tel:+8613082813052">130 8281 3052</a>
@@ -447,7 +460,7 @@ export default function Home() {
                 >
                   <span className="timeline-index">0{index + 1}</span>
                   <span className="employer-name"><strong>{t(employer.company)}</strong><small>{t(employer.team)}</small></span>
-                  <span className="employer-period">{employer.period}</span>
+                  <span className="employer-period">{lang === "en" ? employer.period.replace("至今", "Present") : employer.period}</span>
                   <span className="toggle-mark" aria-hidden="true">{isOpen ? "−" : "+"}</span>
                 </button>
                 {isOpen && (
@@ -465,7 +478,7 @@ export default function Home() {
                               <article className={`project ${projectIsOpen ? "is-open" : ""}`} key={project.id}>
                                 {alwaysOpenProjects ? (
                                   <div className="project-trigger static-project-trigger">
-                                    <span>{t(project.title)}</span>
+                                    <ProjectTitle title={project.title} t={t} />
                                   </div>
                                 ) : (
                                   <button
@@ -475,7 +488,7 @@ export default function Home() {
                                     aria-expanded={projectIsOpen}
                                     aria-controls={`project-panel-${project.id}`}
                                   >
-                                    <span>{t(project.title)}</span>
+                                    <ProjectTitle title={project.title} t={t} />
                                     {!alwaysOpenProjects && <span aria-hidden="true">{projectIsOpen ? (lang === "en" ? "Collapse" : "收起") : (lang === "en" ? "Expand" : "展开")}</span>}
                                   </button>
                                 )}
