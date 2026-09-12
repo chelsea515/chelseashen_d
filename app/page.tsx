@@ -94,7 +94,7 @@ const employers: Employer[] = [
           },
           {
             id: "ai-clienteling",
-            title: "头部美妆品牌｜门店 SA 智能导购 / Clienteling 问答平台",
+            title: "头部美妆品牌｜门店 SA 智能导购问答平台",
             role: "BA Lead",
             summary:
               "以 AI 知识问答与个性化推荐，支持门店 SA 围绕消费者需求进行产品讲解与销售沟通。",
