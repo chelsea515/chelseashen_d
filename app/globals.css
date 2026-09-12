@@ -104,12 +104,12 @@ nav a:hover { color: var(--blue); }
 .project-trigger { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 20px; font-size: 13px; font-weight: 600; line-height: 1.4; }
 .project-trigger span:last-child { flex: 0 0 auto; color: var(--blue); font-size: 12px; font-weight: 500; }
 .project-trigger:hover, .project-trigger:focus-visible { color: var(--blue); }
-.project-detail { padding: 4px 0 32px; }
+.project-detail { padding: 4px 20px 32px; }
 .project-role { width: fit-content; padding: 3px 9px; background: var(--blue-soft); color: var(--blue); font-size: 11px; font-weight: 700; }
 .project-summary { max-width: 760px; margin: 17px 0 20px; font-size: 14px; color: #43505b; }
 .phase { margin-top: 23px; }
 .phase h5 { margin: 0 0 9px; font-size: 13px; color: var(--ink); }
-.phase ul, .project-bullets { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+.phase ul, .project-bullets { margin: 0; padding-left: 36px; list-style-position: outside; color: var(--muted); font-size: 13px; }
 .phase li, .project-bullets li { padding-left: 4px; margin: 7px 0; }
 .metric-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .metric-row span { padding: 4px 9px; border: 1px solid #b8c8dc; border-radius: 99px; color: var(--blue); font-size: 11px; font-weight: 650; }

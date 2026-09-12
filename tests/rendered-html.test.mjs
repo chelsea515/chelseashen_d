@@ -33,6 +33,12 @@ test("career page contains the required positioning and accessible disclosure co
   assert.doesNotMatch(page, /从业务机会识别、路线图制定，到数据产品设计、开发协同及上线运营的端到端交付/);
   assert.doesNotMatch(page, /从用户分层、行为路径与外部数据机会中提炼策略，推动营销、CRM 与商品运营决策/);
   assert.doesNotMatch(page, /<p className="employer-overview">/);
+  assert.doesNotMatch(page, /面向集团管理层、办公室团队与门店，建立统一的经营、客户、商品及门店数据决策支持。/);
+  assert.doesNotMatch(page, /从 0 到 1 规划、实施并运营营销数据平台，打通全域投放数据与业务决策场景。/);
+  assert.match(page, /面向 Marketing、E-commerce、CRM、Merchandising 及 Retail 团队梳理未来 3–5 年业务需求与痛点，沉淀跨部门 Use Case 清单、价值评估框架及实施路线图"/);
+  assert.doesNotMatch(page, /面向 Marketing、E-commerce、CRM、Merchandising 及 Retail 团队梳理未来 3–5 年业务需求与痛点，沉淀跨部门 Use Case 清单、价值评估框架及实施路线图。/);
+  assert.doesNotMatch(page, /运营迭代机制。/);
+  assert.doesNotMatch(page, /商品规划决策。/);
   assert.match(page, /aria-expanded/);
   assert.match(page, /aria-controls/);
   assert.match(page, /useState\(""\)/);
@@ -82,6 +88,8 @@ test("starter preview surface is not shipped", async () => {
   assert.match(css, /\.group-heading h3[^}]*font-size: 13px/);
   assert.match(css, /\.project-trigger \{[^}]*padding: 16px 20px/);
   assert.match(css, /\.project-trigger \{[^}]*font-size: 13px/);
+  assert.match(css, /\.project-detail \{[^}]*padding: 4px 20px 32px/);
+  assert.match(css, /\.phase ul, \.project-bullets \{[^}]*padding-left: 36px/);
   assert.doesNotMatch(css, /\.project-list \{[^}]*border-left/);
   assert.doesNotMatch(css, /\.project-list \{[^}]*border-right/);
   assert.match(css, /prefers-reduced-motion/);
