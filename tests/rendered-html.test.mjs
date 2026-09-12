@@ -25,6 +25,8 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /10\+ 数据平台接入/);
   assert.match(page, /广告 ROI 提升 7%\+/);
   assert.match(page, /chelsea-portrait-v2\.jpg/);
+  assert.doesNotMatch(page, /portrait-note/);
+  assert.doesNotMatch(page, /以结果为责，以专业深耕价值/);
   assert.doesNotMatch(page, /id="education"/);
   assert.match(page, /联系方式：/);
   assert.match(page, /chuanshen5@163\.com/);
@@ -45,6 +47,7 @@ test("starter preview surface is not shipped", async () => {
 
   assert.doesNotMatch(page, /_sites-preview|SkeletonPreview|codex-preview/);
   assert.doesNotMatch(layout, /codex-preview|Starter Project/);
+  assert.doesNotMatch(css, /portrait-frame::before/);
   assert.match(css, /prefers-reduced-motion/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(packageJson, /"test": "WRANGLER_LOG_PATH=\.wrangler\/wrangler\.log vinext build && node --test tests\/rendered-html\.test\.mjs"/);

@@ -311,13 +311,11 @@ export default function Home() {
         </div>
 
         <div className="portrait-frame">
-          <div className="portrait-note">PROFILE</div>
           <img
             src="/chelsea-portrait-v2.jpg"
             alt="沈川 Chelsea 的职业头像"
             className="portrait"
           />
-          <p>以结果为责，以专业深耕价值。</p>
         </div>
 
         <aside className="hero-facts" aria-label="职业概览">
