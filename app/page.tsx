@@ -305,6 +305,9 @@ export default function Home() {
             <em>沈 川</em>
           </h1>
           <p className="hero-intro">数字化转型与产品落地交付</p>
+          <p className="hero-subcopy">
+            连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化
+          </p>
         </div>
 
         <div className="portrait-frame">
@@ -320,7 +323,7 @@ export default function Home() {
         <aside className="hero-facts" aria-label="职业概览">
           <div className="fact-grid">
             <div><strong>6+</strong><span>年工作经验</span></div>
-            <div><strong>墨尔本大学</strong><span>本科、硕士｜市场营销与分析</span></div>
+            <div><strong>墨尔本大学</strong><span>市场营销与分析（本/硕）</span></div>
           </div>
         </aside>
       </section>

@@ -10,11 +10,13 @@ test("career page contains the required positioning and accessible disclosure co
   assert.match(page, /沈 川/);
   assert.match(page, /<p className="eyebrow">PROFILE<\/p>/);
   assert.match(page, /数字化转型与产品落地交付/);
+  assert.match(page, /连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化/);
   assert.doesNotMatch(page, /浏览工作经历/);
   assert.doesNotMatch(page, /负责、热爱/);
   assert.doesNotMatch(page, /聚焦奢侈品、美妆、汽车及酒店行业的数据与客户运营场景/);
   assert.match(page, /6\+<\/strong><span>年工作经验/);
-  assert.match(page, /墨尔本大学<\/strong><span>本科、硕士｜市场营销与分析/);
+  assert.match(page, /墨尔本大学<\/strong><span>市场营销与分析（本\/硕）/);
+  assert.doesNotMatch(page, /本科、硕士｜市场营销与分析/);
   assert.doesNotMatch(page, /个硕博学位/);
   assert.match(page, /aria-expanded/);
   assert.match(page, /aria-controls/);
