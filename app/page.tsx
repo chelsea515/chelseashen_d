@@ -19,7 +19,7 @@ type Project = {
 
 type ProjectGroup = {
   title: string;
-  description: string;
+  description?: string;
   projects: Project[];
 };
 
@@ -43,8 +43,6 @@ const employers: Employer[] = [
     groups: [
       {
         title: "01 / 数字化与 AI 转型规划、Use Case 落地",
-        description:
-          "从业务机会识别、路线图制定，到数据产品设计、开发协同及上线运营的端到端交付。",
         projects: [
           {
             id: "luxury-dashboard",
@@ -113,8 +111,6 @@ const employers: Employer[] = [
       },
       {
         title: "02 / 用户数据洞察驱动业务运营优化",
-        description:
-          "从用户分层、行为路径与外部数据机会中提炼策略，推动营销、CRM 与商品运营决策。",
         projects: [
           {
             id: "hotel-crm",
@@ -300,10 +296,7 @@ export default function Home() {
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">PROFILE</p>
-          <h1 id="hero-title">
-            Chelsea Shen<br />
-            <em>沈 川</em>
-          </h1>
+          <h1 id="hero-title">Chelsea Shen</h1>
           <p className="hero-intro">数字化转型与产品落地交付</p>
           <p className="hero-subcopy">
             连接业务、数据与技术，推动品牌数字化转型及数据产品交付，驱动广告、会员、线下零售等业务运营优化
@@ -327,12 +320,8 @@ export default function Home() {
       </section>
 
       <section className="section profile" id="profile" aria-labelledby="profile-title">
-        <div className="section-label">01 / Profile</div>
         <div>
-          <h2 id="profile-title">把模糊的业务问题，变成可落地的数据与产品方案。</h2>
-          <p className="section-intro">
-            具备从需求洞察、Use Case 规划、数据分析与产品设计，到开发协同、UAT、上线及运营迭代的端到端经验。
-          </p>
+          <h2 id="profile-title">经历亮点：端到端的产品解决方案 - 产品规划 &gt; 产品落地 &gt; 业务赋能</h2>
         </div>
         <div className="capability-list">
           <article><span>01</span><h3>数字化 / AI 转型规划</h3><p>识别业务机会，定义 Use Case，制定优先级与路线图。</p></article>
@@ -372,7 +361,6 @@ export default function Home() {
                       <section className="project-group" key={group.title}>
                         <div className="group-heading">
                           <h3>{group.title}</h3>
-                          <p>{group.description}</p>
                         </div>
                         <div className="project-list">
                           {group.projects.map((project) => {
