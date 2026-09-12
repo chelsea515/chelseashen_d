@@ -42,7 +42,7 @@ const translations: Record<string, string> = {
   "创新服务部": "Innovation Services",
   "01 / 数字化与 AI 转型规划、Use Case 落地": "01 / Digital & AI Transformation Planning, Use Case Delivery",
   "02 / 用户数据洞察驱动业务运营优化": "02 / Consumer Date Insights for Business Optimization",
-  "全球奢侈时尚品牌｜数字化与 AI 转型规划及经营分析 Dashboard": "Global Luxury Fashion Brand | Digital & AI Transformation Planning and Business Analytics Dashboard",
+  "全球奢侈时尚品牌｜数字化与AI 转型规划、集团跨职能报表搭建": "Global Luxury Fashion Brand | Digital & AI Transformation Planning and Cross-functional Reporting Build",
   "头部汽车品牌｜营销数据平台（DMP）三年规划与端到端建设": "Leading Automotive Brand | Three-year Marketing Data Platform (DMP) Roadmap and End-to-end Build",
   "头部美妆品牌｜门店 SA 智能导购问答平台": "Leading Beauty Brand | Store SA AI-assisted Advisor Q&A Platform",
   "全球酒店集团｜CRM 会员运营战略与本地化 Campaign": "Global Hotel Group | CRM Membership Strategy and Localized Campaigns",
@@ -64,7 +64,7 @@ const translations: Record<string, string> = {
   "工作理念：沉下心，有担当，有热爱": "Working philosophy: Stay grounded, take ownership and bring passion",
   "年工作经验": "years of experience",
   "市场营销与分析（本/硕）": "Marketing & Analytics (B/M)",
-  "端到端的产品解决方案交付": "End-to-end Product Solution Delivery",
+  "端到端的产品解决方案交付": "End-to-End",
   "产品规划，产品落地，业务赋能": "Roadmap Planning, product delivery, business enablement",
   "数字化 / AI 转型规划": "Digital / AI Transformation Planning",
   "数字化产品落地": "Digital Product Delivery",
@@ -148,7 +148,7 @@ const employers: Employer[] = [
         projects: [
           {
             id: "luxury-dashboard",
-            title: "全球奢侈时尚品牌｜数字化与 AI 转型规划及经营分析 Dashboard",
+            title: "全球奢侈时尚品牌｜数字化与AI 转型规划、集团跨职能报表搭建",
             role: "项目经理兼 BA Lead",
             rolePlacement: "after-second-phase",
             phases: [
