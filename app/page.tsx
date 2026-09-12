@@ -304,7 +304,7 @@ export default function Home() {
 
         <div className="portrait-frame">
           <img
-            src="/chelsea-portrait-v2.jpg"
+            src="chelsea-portrait-v2.jpg"
             alt="沈川 Chelsea 的职业头像"
             className="portrait"
           />

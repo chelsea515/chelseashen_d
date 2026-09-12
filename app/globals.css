@@ -61,8 +61,8 @@ nav a:hover { color: var(--blue); }
 .hero-subcopy { max-width: none; margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
 .hero-belief { margin: 11px 0 0; color: var(--blue); font-size: 13px; font-weight: 650; letter-spacing: .02em; }
 
-.portrait-frame { position: relative; align-self: center; justify-self: end; padding: 0; text-align: center; transform: translateX(clamp(-56px, -4vw, -28px)); }
-.portrait { width: clamp(210px, 20vw, 250px); height: clamp(210px, 20vw, 250px); object-fit: cover; object-position: center top; border-radius: 50%; filter: grayscale(8%); box-shadow: none; mix-blend-mode: multiply; }
+.portrait-frame { position: relative; align-self: center; justify-self: end; padding: 0; text-align: center; transform: translateX(clamp(-96px, -7vw, -52px)); }
+.portrait { width: 250px; height: 250px; object-fit: cover; object-position: center center; border-radius: 50%; filter: grayscale(8%); box-shadow: none; mix-blend-mode: multiply; }
 
 .fact-grid { max-width: 520px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
 .fact-grid div { padding-top: 16px; border-top: 1px solid var(--line); }

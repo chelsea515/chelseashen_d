@@ -104,9 +104,10 @@ test("starter preview surface is not shipped", async () => {
   assert.doesNotMatch(css, /portrait-frame::before/);
   assert.match(css, /\.hero \{[^}]*min-height: 520px/);
   assert.match(css, /\.portrait-frame \{[^}]*justify-self: end/);
-  assert.match(css, /\.portrait-frame \{[^}]*transform: translateX\(clamp\(-56px, -4vw, -28px\)\)/);
-  assert.match(css, /\.portrait \{[^}]*width: clamp\(210px, 20vw, 250px\)/);
-  assert.match(css, /\.portrait \{[^}]*height: clamp\(210px, 20vw, 250px\)/);
+  assert.match(css, /\.portrait-frame \{[^}]*transform: translateX\(clamp\(-96px, -7vw, -52px\)\)/);
+  assert.match(css, /\.portrait \{[^}]*width: 250px/);
+  assert.match(css, /\.portrait \{[^}]*height: 250px/);
+  assert.match(css, /\.portrait \{[^}]*object-position: center center/);
   assert.match(css, /\.portrait \{[^}]*border-radius: 50%/);
   assert.match(css, /\.portrait \{[^}]*box-shadow: none/);
   assert.match(css, /\.hero-belief \{[^}]*color: var\(--blue\)/);
